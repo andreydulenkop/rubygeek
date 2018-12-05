@@ -1,0 +1,14 @@
+<% elements.each do |itm | %>
+<div class="container-fluid">
+  <div class="col-sm-12">
+    <div class="card card-default">
+      <div class="card-heading">
+        <strong><%= itm.title %></strong> </br>
+      </div>
+      <%= itm.text %>
+      <td><%= link_to 'Edit', edit_polymorphic_path([parent, itm]), :class=>'btn btn-light' %></td>
+      <td><%= link_to 'Delete', [parent, itm], :class=>'btn btn-danger float-right', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </div><!-- /card card-default -->
+  </div><!-- /col-sm-5 -->
+</div>
+<%end%>
